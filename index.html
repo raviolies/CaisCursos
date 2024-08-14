@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    .botao2{
+    padding: 12px 20px;
+    font: bold;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    border: 3px solid #2196f3;
+    background-color: white;
+    color: #2196f3; 
+    font-family: 'Poppins', sans-serif;
+  }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+      <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+      <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="modulo1.html">Python: Módulo 1</a> 
+      <a href="modulo2.html">Python: Módulo 2</a>
+      <a href="modulo3.html">Python: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+    <main id="conteudo">
+    <h2>Olá, seja muito bem-vindo ao Curso de Python da CAIS Cursos!</h2>
+    <p>Aqui, você encontrará um ambiente de aprendizagem dinâmica, professores atenciosos e muito mais.<br>
+    Mas para começar a primeira aula do nosso curso, precisamos saber um pouquinho sobre essa linguagem de programação!</p>
+    
+    <h4>Vantagens de programar em Python:</h4>
+    <p>1- A sintaxe de Python é clara e fácil de aprender, o que facilita a leitura e manutenção do código.
+      <br>2- Python é usado em diversas áreas, como desenvolvimento web, ciência de dados, inteligência artificial, automação, e muito mais.
+      <br>3- A grande comunidade de Python oferece suporte, documentação, e uma abundância de recursos para aprendizado e resolução de problemas.
+      <br>4- Python é multiplataforma, o que significa que você pode executar seu código em diferentes sistemas operacionais, como Windows, macOS e Linux, sem muitas alterações.
+      <br>5- Python se integra bem com outras linguagens e tecnologias, como C, C++, e Java, facilitando a extensão de funcionalidades e o desenvolvimento de sistemas complexos.
+      <br>6- Por ser uma das linguagens mais demandadas no mercado, aprender Python pode abrir muitas oportunidades de trabalho e desenvolvimento de carreira.</p>
+      <h4>Aplicações desta linguagem</h4>
+      <p>Python é excelente para automação de tarefas repetitivas, como processamento de arquivos, web scraping (coleta de dados da web) e automação de testes,também é frequentemente 
+      usado para criar protótipos rápidos, assim como para o desenvolvimento de aplicativos completos, devido à sua sintaxe<br> simples e rica base de bibliotecas.
+      É usado em pesquisa científica para cálculos complexos e simulações, com ferramentas como SciPy e SymPy.<br>
+      Embora não seja a escolha principal para jogos de alto desempenho, está presente em jogos indie e educativos. O Pygame é uma biblioteca popular para desenvolvimento de jogos simples.</p>
+
+    </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      }
+
+    </script>
+</body>
+</html>

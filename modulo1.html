@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    .botao2{
+    padding: 12px 20px;
+    font: bold;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    border: 3px solid #2196f3;
+    background-color: white;
+    color: #2196f3; 
+    font-family: 'Poppins', sans-serif;
+  }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="modulo1.html">Python: Módulo 1</a> 
+      <a href="modulo2.html">Python: Módulo 2</a>
+      <a href="modulo3.html">Python: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+    <main id="conteudo">
+    <h2>Módulo 1 - Aula 1</h2>
+    <p>Para escrever nosso primeiro programa, utilizaremos o software Visual Studio Code(você pode baixá-lo clicando
+    <a href="https://code.visualstudio.com/download" target="_blank">AQUI</a>).
+    <br>No vídeo abaixo, ensinamos a baixar e instalar o VSCode e a extensão Python.<p>
+
+    <h2>Módulo 1 - Aula 2</h2>
+    <p>Nesta aula, você aprenderá os primeiros programas!<br>Ensinamos 3: um para saber se a pessoa é maior de idade, um para somar uma sequência de números e outro para adivinhar um número.</p>
+
+    <div style="padding: 14px"> 
+    <video width="420" controls>
+        <source src="comobaixarpython.mp4" type="'video/mp4">
+    </video>
+    <br><button class="botao2 botao2-radius" onclick="playPause()">Play/Pausar</button><br><br>
+
+    <video width="420" controls>
+        <source src="comobaixarpython.mp4" type="'video/mp4">
+    </video>
+    <br><button class="botao2 botao2-radius" onclick="playPause()">Play/Pausar</button><br><br>
+    </div>
+    </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+        var video = document.getElementById("video1"); 
+
+        function playPause() { 
+        if (video.paused) 
+        video.play(); 
+            else 
+         video.pause(); } 
+
+    </script>
+</body>
+</html>
