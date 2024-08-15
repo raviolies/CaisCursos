@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    .botao2{
+    padding: 12px 20px;
+    font: bold;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    border: 3px solid #2196f3;
+    background-color: white;
+    color: #2196f3; 
+    font-family: 'Poppins', sans-serif;
+  }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+      <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+      <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="modulo1.html">Python: Módulo 1</a> 
+      <a href="modulo2.html">Python: Módulo 2</a>
+      <a href="modulo3.html">Python: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+    <main id="conteudo">
+      <p>A CAIS Cursos começou quando dois amigos decidiram se juntar para difundir seus conhecimentos em programação em maio de 2019 </p>
+    
+    
+    <h4></h4>
+    
+    </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      }
+
+    </script>
+</body>
+</html>
