@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="modulo1.html">Python: Módulo 1</a> 
+      <a href="modulo2.html">Python: Módulo 2</a>
+      <a href="modulo3.html">Python: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+    <main id="conteudo">
+    <h2>Módulo 2 - Aula 1</h2>
+    <p>Parabéns! Você acaba de finalizar o primeiro módulo, e agora, evoluirá cada vez mais.
+    <br>Para a primeira aula do módulo 2, deixaremos um vídeo abaixo com o tuturial explicadinho e também disponibilizaremos os códigos para você!
+    </p>
+    <video width="420" controls>
+        <source src="Módulo 2.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <h2>Códigos</h2>
+    <h3 color:"#7B00AB">Fatorial de um número</h3>
+    <p>n = int(input("Entre com um número"))<br>
+        fat = 1<br>
+        for i in range(1, n+1):<br>
+            fat = fat * i<br>
+        print(fat)</p><br>
+
+    <h3 color:"#7B00AB">Número primo</h3>
+    <p>n = int(input("Entre com um número")<br>
+    x=0<br>
+    for i in range(1,n+1):<br>
+    if(n%i==0):<br>
+        x=x+1<br>
+    if x==2:<br>
+    print("Número é primo")<br>
+    else:<br>
+    print("Número não é primo")</p><br>
+
+    <h3 color:"#7B00AB">Número de Euler</h3>
+    <p>n = int(input("Entre com um número"))<br>
+        E=1<br>
+        for i in range(1, n+1):<br>
+            fat=1<br>
+            for j in range(1,i+1):<br>
+                fat= fat*j<br>
+            E= E+(1/fat)<br>
+        print(f"O número de euler de {n} é {E}")</p><br>
+
+    <h3 color:"#7B00AB">Vetores</h3>
+    <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
+        vetor=[]<br>
+        for i in range(0, n):<br>
+        vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+         for i in range(0, n):<br>
+        print(f"[{vetor[i]}]",end=' ')</p><br>
+
+    <h3 color:"#7B00AB">Matriz</h3>
+    <p>import numpy as np<br>
+    linhas = int(input("Digite o número de linhas: "))<br>
+    colunas = int(input("Digite o número de colunas: "))<br>
+    matriz = np.zeros((linhas, colunas))<br>
+    for i in range(linhas):<br>
+    for j in range(colunas):<br>
+        valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))<br>
+        matriz[i, j] = valor<br>
+    for i in range(linhas):<br>
+    print()<br>
+    for j in range(colunas):<br>
+        print(f"[{matriz[i,j]}]",end=' ')</p><br>
+
+    <h3 color:"#7B00AB">Criação e exclusão de arquivos</h3>
+    <p>nome = input("Escreva o nome do arquivo:")<br>
+        arquivo = open(nome+".txt", "w")<br>
+        valor = input("Escreva o que você quiser:")<br>
+        arquivo.write(valor)<br>
+        arquivo.close()</p>
+    </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+        var video = document.getElementById("video1"); 
+
+        function playPause() { 
+        if (video.paused) 
+        video.play(); 
+            else 
+         video.pause(); } 
+
+    </script>
+</body>
+</html>
