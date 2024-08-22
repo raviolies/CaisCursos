@@ -119,28 +119,28 @@
     print("Número não é primo")//Imprimindo</p><br>
 
     <h3 color:"#7B00AB">Número de Euler</h3>
-    <p>n = int(input("Entre com um número"))<br>
-        E=1<br>
+    <p>n = int(input("Entre com um número")) //Começamos declarando a variável N que armazena o valor que será lido<br>
+        E=1 //Depois declaramos a variável E que armazena o número de Euler, que é uma constante e não pode ser alterado<br>
         for i in range(1, n+1):<br>
             fat=1<br>
             for j in range(1,i+1):<br>
-                fat= fat*j<br>
-            E= E+(1/fat)<br>
+                fat= fat*j //Aqui temos a operação para que consigamos imprimir a constante<br>
+            E= E+(1/fat) //Aqui também<br>
         print(f"O número de euler de {n} é {E}")</p><br>
 
     <h3 color:"#7B00AB">Vetores</h3>
     <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
-        vetor=[]<br>
+        vetor=[] //Utilizamos estas chaves para indicar a posição do vetor<br>
         for i in range(0, n):<br>
-        vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+        vetor.append(int(input(f"Entre com a posição {i} do vetor:  "))) //Usamos esta função para trabalhar com vetores<br>
          for i in range(0, n):<br>
         print(f"[{vetor[i]}]",end=' ')</p><br>
 
     <h3 color:"#7B00AB">Matriz</h3>
-    <p>import numpy as np<br>
+    <p>import numpy as np //Começamos importando a biblioteca numpy<br>
     linhas = int(input("Digite o número de linhas: "))<br>
     colunas = int(input("Digite o número de colunas: "))<br>
-    matriz = np.zeros((linhas, colunas))<br>
+    matriz = np.zeros((linhas, colunas)) //Aqui inserimos o n° das linhas e das colunas<br>
     for i in range(linhas):<br>
     for j in range(colunas):<br>
         valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))<br>
@@ -152,10 +152,10 @@
 
     <h3 color:"#7B00AB">Criação e exclusão de arquivos</h3>
     <p>nome = input("Escreva o nome do arquivo:")<br>
-        arquivo = open(nome+".txt", "w")<br>
+        arquivo = open(nome+".txt", "w") //Aqui abrimos o arquivo no modo "write" que é escrever<br>
         valor = input("Escreva o que você quiser:")<br>
         arquivo.write(valor)<br>
-        arquivo.close()</p>
+        arquivo.close() //Aqui fechamos o arquivo após terminar de escrever</p>
     </main>
 
     <script>
