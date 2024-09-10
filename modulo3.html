@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="modulo1.html">Python: Módulo 1</a> 
+      <a href="modulo2.html">Python: Módulo 2</a>
+      <a href="modulo3.html">Python: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+    <main id="conteudo">
+    <h2>Módulo 3 - Aula 1</h2>
+    <p>Parabéns! Você acaba de finalizar o segundo módulo, e agora, evoluirá cada vez mais.
+    <br>Para a primeira aula do módulo 3, deixaremos um vídeo abaixo com o tuturial explicadinho e também disponibilizaremos os códigos para você!
+    </p>
+    <video width="420" controls>
+        <source src="modulo3.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <h2>Ordenações</h2>
+    <h3 color:"#7B00AB">Permutação</h3>
+    <p>O programa começa com um for do i variando as posições normais do vetor e outro for de j que varia da última posição do vetor até a atual.<br> Dentro desse for temos um if comparando se o elemento da posição i é maior ou menor que o da posição j, e se for, o maior vai ser crescente a ordenação, o menor decrescente.
+    Assim criamos uma variável aux que vai ter o valor da posição i, fazer a posição i pegar o valor da posição j e fazer a posição j pegar o valor de aux.<p>
+    <p>n = int(input("Entre com a dimensão do vetor:  "))
+    vetor=[]
+    for i in range(0, n):
+        vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
+    print("Vetor não ordenado\n")
+    for i in range(0, n):
+        print(f"[{vetor[i]}]",end=' ')
+    for i in range(0,n):
+        for j in range(n-1,i,-1):
+            if vetor[i]>vetor[j]:
+                aux=vetor[i]
+                vetor[i]=vetor[j]
+                vetor[j]=aux
+    print("\nVetor ordenado \n:")
+    for i in range(0, n):
+        print(f"[{vetor[i]}]",end=' ')</p>
+
+    <h3 color:"#7B00AB">Inserção Binária</h3>
+        <p>Primeiro criamos um vetor, e depois temos um for de i que vai de 1 até n.
+        Ordenamos esse vetor por meio da realização da média de dois limites sendo um inferior ou igual a 0 e um superior ou igual 
+        a i. Com ele criamos um while que fica em loop enquanto o inferior for menor que o superior. 
+        <br>Dentro dele fazemos a média e se o valor da posição que deu na média for menor ou igual a variável i, o limite inferior vai subir pra um acima da posição da média, se não o limite superior fica igual a posição da média. Por fim, atribuímos a posição do limite superior ao valor da posição i.</p>
+    
+    <p>n = int(input("Entre com a dimensão do vetor:  "))
+        vetor=[]
+        for i in range(0, n):
+            vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
+        print("Vetor não ordenado\n")
+        for i in range(0, n):
+            print(f"[{vetor[i]}]",end=' ')
+        for i in range(1,n):
+            temp=vetor[i]
+            l=0
+            r=i
+            while l < r:
+                pos= int((l+r)/2)
+                if(vetor[pos]<=temp):
+                    l=pos+1
+                else:
+                    r=pos
+            for j in range(i,r,-1):
+                vetor[j]=vetor[j-1]
+            vetor[r]=temp
+        print("\nVetor Ordenado:\n")
+        for i in range(0, n):
+            print(f"[{vetor[i]}]",end=' ')</p>
+
+    <h3 color:"#7B00AB">Inserção Direta</h3>
+        <p>Após a criação do vetor, temos um for que vai da posição 1 até o tamanho do vetor, declarando x igual ao valor da posição do vetor e j igual a posição do vetor e ainda dentro do for, temos um while que vai comparar x com os valores do vetor anterior e deslocar para esquerda e vai continuar até que x seja encontrado. Quando o while terminar, x é colocado na posição correta.</p>
+   <p>n = int(input("Entre com a dimensão do vetor:  "))
+    vetor=[]
+    for i in range(0, n):
+      vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
+    print("Vetor não ordenado\n")
+    for i in range(0, n):
+      print(f"[{vetor[i]}]",end=' ')
+    for i in range(1,n):
+      x=vetor[i]
+      j=i
+      while j>0 and x < vetor[j-1]:
+        vetor[j]=vetor[j-1]
+        j=j-1
+      vetor[j]=x
+    print("\nVetor ordenado: \n")
+    for i in range(0, n):
+      print(f"[{vetor[i]}]",end=' ')</p>
+
+    <h3 color:"#7B00AB">Seleção direta</h3>
+    <p>Após a criação do vetor, temos um for que vai de 1 até o tamanho do vetor, declarando x igual ao valor da posição do vetor e j igual a posição do vetor, ainda dentro do for vai temos um while que vai comparar x com os valores do vetor anterior e deslocar para esquerda e vai continuar até que x seja encontrado. Quando o while terminar, x é colocado na posição correta.</p>
+    <p>n = int(input("Entre com a dimensão do vetor:  "))
+   vetor=[]
+for i in range(0, n):
+  vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
+print("Vetor não ordenado\n")
+for i in range(0, n):
+  print(f"[{vetor[i]}]",end=' ')
+for i in range(0,n):
+  k=i
+  x=vetor[i]
+  for j in range(i+1,n):
+    if(vetor[i]>vetor[j]):
+      k=j
+      x=vetor[k]
+    vetor[k]=vetor[i]
+    vetor[i]=x
+print("\nVetor ordenado: \n")
+for i in range(0, n):
+  print(f"[{vetor[i]}]",end=' ')</p>
+
+    <h3 color:"#7B00AB">Bolha</h3>
+<p>Após a criação do vetor, temos um for que vai verificar se o elemento atual é maior que o próximo, e caso seja, ele trocará de posição(o maior ficará para frente).
+    Depois, diminuirá o alcance pois uma parte já estaria ordenada, então esse processo de ordenação de pares vai se repetir por todo o vetor.</p>
+    <p>n = int(input("Entre com um numero = "))
+        vet=[]
+        for i in range(0, n):
+          vet.append(int(input(f"Entre com a posiçao{i} = ")))
+        for i in range(0,n):
+          print(vet[i], end=' ')
+        ind2=n
+        troquei=1
+        while(troquei==1):
+          troquei=0
+          for i in range(0,ind2-1):
+            if(vet[i]>vet[i+1]):
+              aux = vet[i]
+              vet[i] = vet[i+1]
+              vet[i+1] = aux 
+              troquei=1
+          ind2 = ind2 - 1     
+        print(f"\nVetor ordenado por bolha:")
+          for i in range(0,n):
+            print(vet[i],end=' ')</p>
+
+    <h2>Buscas no vetor</h2>
+    <h3 color:"#7B00AB">Simples</h3>
+    <p>Após a criação do vetor, será pedido para o usuário inserir um número.
+        Depois disso, temos um for para verificar se no vetor existe esse número inserido, caso exista, em um print uma variável vai falar quantas vezes ele apareceu no código e outra em quais posições ele apareceu no vetor.</p>
+        <p>n = int(input("Entre com a dimensão do vetor:  "))
+        vetor=[]
+        for i in range(0, n):
+          vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
+        print("Vetor:\n")
+        for i in range(0, n):
+          print(f"[{vetor[i]}]",end=' ')
+        e = int(input("\nEntre com o número a ser buscado:  "))
+        ok=0
+        for i in range(0,n):
+          if(vetor[i]==e):
+            ok=ok+1
+            print(f"O número {e} foi encontrado na posição {i} do vetor")    
+        print(f"O número {e} foi encontrado {ok} vez(es):")</p>
+
+    <h3 color:"#7B00AB">Binária</h3>
+    <p>Após a criação do vetor, um while verifica se ele tem números repetidos e o impede de colocá-los. Após isso o vetor é ordenado por Permutação.
+        Um while verifica se o numero procurado existe, e se o número é maior ou menor que a posição central do vetor,caso seja maior, ele irá "excluir" os numeros anteriores e irá focar apenas nos números posteriores e vice-versa. Esse processo se repete até o número ser achado.</p>
+    <p>n = int(input("Entre com um numero = "))
+        vet=[]
+        for i in range(n):
+          ok=0
+          valor = int(input(f"Entre com a posição {i} = "))
+          while(ok==0):
+            if valor in vet:
+              print("Não é permitido ter posições com valores iguais")
+              valor = int(input(f"Entre com a posição {i} = "))
+            else:
+              vet.append(valor)
+              ok=1
+        print("Vetor:\n")
+        for i in range(0,n):
+          print(f"[{vet[i]}]",end=' ')
+        for i in range(0,n):
+          for j in range(n-1,i,-1):
+            if vet[i] > vet[j]:
+              temp = vet[i]
+              vet[i] = vet[j]
+              vet[j] = temp      
+        print("\nVetor ordenado:\n")
+        for i in range(0,n):
+          print(f"[{vet[i]}]",end=' ')
+        ele = int(input("\nEntre com um numero = "))
+        l=0 
+        r=n-1
+        while(r>l):
+          pos=int((l+r)/2)
+          if(vet[pos]>ele):
+            r=pos-1
+          else:
+            l=pos+1
+          if vet[pos]==ele:
+            print(f"O elemento {ele} foi encontrado na posição {pos} do vetor")
+            r=l-1
+          elif r==l:
+            if vet[r]==ele:
+              print(f"O elemento {ele} foi encontrado na posição {r} do vetor")
+            else:
+              print(f"O elemento {ele} não foi encontrado")</p>
+
+
+    <h2>Buscas na matriz</h2>
+    <h3 color:"#7B00AB">Linhas</h3>  
+    <p>Após a criação da matriz, o usuário insere o número desejado, e um laço feito de dois for faz com que procure o número em toda a matriz.</p>
+    <p>import numpy as np
+        linhas = int(input("Digite o número de linhas: "))
+        colunas = int(input("Digite o número de colunas: "))
+        mat = np.zeros((linhas, colunas))
+        for i in range(linhas):
+          for j in range(colunas):
+            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
+            mat[i, j] = valor
+        for i in range(linhas):
+          print()
+          for j in range(colunas):
+            print(f"[{mat[i,j]}]",end=' ') 
+        for k in range (0,linhas):
+          for i in range (0,colunas):
+            for j in range(linhas-1,i,-1):
+              if (mat[k][i]>mat[k][j]):
+                aux = mat[k][i]
+                mat[k][i] = mat[k][j]
+                mat[k][j] = aux
+        print(f"\nMatriz com suas linhas ordenadas")
+        for i in range(linhas):
+          print()
+          for j in range(colunas):
+            print(f"[{mat[i,j]}]",end=' ')</p> 
+
+
+    <h3 color:"#7B00AB">Colunas</h3>
+    <p> import numpy as np
+        linhas = int(input("Digite o número de linhas: "))
+        colunas = int(input("Digite o número de colunas: "))
+        mat = np.zeros((linhas, colunas))
+        for i in range(linhas):
+          for j in range(colunas):
+            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
+            mat[i, j] = valor
+        print("\nMatriz original:")
+        for i in range(linhas):
+          print()
+          for j in range(colunas):
+            print(f"[{mat[i,j]}]", end=' ')
+        for j in range(colunas):
+          for i in range(linhas - 1):
+            for k in range(i + 1, linhas):
+              if mat[i][j] > mat[k][j]:
+                aux = mat[i][j]
+                mat[i][j] = mat[k][j]
+                mat[k][j] = aux
+        print(f"\n\nMatriz com suas colunas ordenadas:")
+        for i in range(linhas):
+          print()
+          for j in range(colunas):
+            print(f"[{mat[i,j]}]", end=' ')</p>    
+            
+    <h3 color:"#7B00AB">Inteira</h3>      
+   <p> import numpy as np
+    linhas = int(input("Digite o número de linhas: "))
+    colunas = int(input("Digite o número de colunas: "))
+    mat = np.zeros((linhas, colunas))
+    for i in range(linhas):
+      for j in range(colunas):
+        valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
+        mat[i, j] = valor
+    print("\nMatriz original:")
+    for i in range(linhas):
+      print()
+      for j in range(colunas):
+        print(f"[{mat[i,j]}]", end=' ')
+    vet=[]
+    for i in range(linhas):
+      for j in range(colunas):
+        vet.append(mat[i,j])
+    n=linhas*colunas
+    for i in range(0,n):
+      for j in range(n-1,i,-1):
+        if vet[i]>vet[j]:
+          aux=vet[i]
+          vet[i]=vet[j]
+          vet[j]=aux
+    k=0
+    for i in range(linhas):
+      for j in range(colunas):
+        mat[i,j]=vet[k]
+        k=k+1
+    print("\nMatriz ordenada:")
+    for i in range(linhas):
+      print()
+      for j in range(colunas):
+        print(f"[{mat[i,j]}]", end=' ')</p>
+
+    <h3 color:"#7B00AB">Busca na matriz</h3>
+        <p>import numpy as np
+        linhas = int(input("Digite o número de linhas: "))
+        colunas = int(input("Digite o número de colunas: "))
+        mat = np.zeros((linhas, colunas))
+        for i in range(linhas):
+          for j in range(colunas):
+            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
+            mat[i, j] = valor
+        print("\nMatriz:")
+        for i in range(linhas):
+          print()
+          for j in range(colunas):
+            print(f"[{mat[i,j]}]", end=' ')
+        e = int(input("\nEntre com o número a ser buscado:  "))
+        ok=0
+        for i in range(linhas):
+          for j in range(colunas):
+            if(mat[i,j]==e):
+              ok=ok+1
+              print(f"O número {e} foi encontrado na posição [{i},{j}] da matriz")    
+        print(f"O número {e} foi encontrado {ok} vez(es):")</p>
+    </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+    </script>
+</body>
+</html>
