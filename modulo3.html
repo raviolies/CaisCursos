@@ -103,21 +103,21 @@
     <h3 color:"#7B00AB">Permutação</h3>
     <p>O programa começa com um for do i variando as posições normais do vetor e outro for de j que varia da última posição do vetor até a atual.<br> Dentro desse for temos um if comparando se o elemento da posição i é maior ou menor que o da posição j, e se for, o maior vai ser crescente a ordenação, o menor decrescente.
     Assim criamos uma variável aux que vai ter o valor da posição i, fazer a posição i pegar o valor da posição j e fazer a posição j pegar o valor de aux.<p>
-    <p>n = int(input("Entre com a dimensão do vetor:  "))
-    vetor=[]
-    for i in range(0, n):
-        vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
-    print("Vetor não ordenado\n")
-    for i in range(0, n):
-        print(f"[{vetor[i]}]",end=' ')
-    for i in range(0,n):
-        for j in range(n-1,i,-1):
-            if vetor[i]>vetor[j]:
-                aux=vetor[i]
-                vetor[i]=vetor[j]
-                vetor[j]=aux
-    print("\nVetor ordenado \n:")
-    for i in range(0, n):
+    <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
+    vetor=[]<br>
+    for i in range(0, n):<br>
+        vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+    print("Vetor não ordenado\n")<br>
+    for i in range(0, n):<br>
+        print(f"[{vetor[i]}]",end=' ')<br>
+    for i in range(0,n):<br>
+        for j in range(n-1,i,-1):<br>
+            if vetor[i]>vetor[j]:<br>
+                aux=vetor[i]<br>
+                vetor[i]=vetor[j]<br>
+                vetor[j]=aux<br>
+    print("\nVetor ordenado \n:")<br>
+    for i in range(0, n):<br>
         print(f"[{vetor[i]}]",end=' ')</p>
 
     <h3 color:"#7B00AB">Inserção Binária</h3>
@@ -126,70 +126,70 @@
         a i. Com ele criamos um while que fica em loop enquanto o inferior for menor que o superior. 
         <br>Dentro dele fazemos a média e se o valor da posição que deu na média for menor ou igual a variável i, o limite inferior vai subir pra um acima da posição da média, se não o limite superior fica igual a posição da média. Por fim, atribuímos a posição do limite superior ao valor da posição i.</p>
     
-    <p>n = int(input("Entre com a dimensão do vetor:  "))
-        vetor=[]
-        for i in range(0, n):
-            vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
-        print("Vetor não ordenado\n")
-        for i in range(0, n):
-            print(f"[{vetor[i]}]",end=' ')
-        for i in range(1,n):
-            temp=vetor[i]
-            l=0
-            r=i
-            while l < r:
-                pos= int((l+r)/2)
-                if(vetor[pos]<=temp):
-                    l=pos+1
-                else:
-                    r=pos
-            for j in range(i,r,-1):
-                vetor[j]=vetor[j-1]
-            vetor[r]=temp
-        print("\nVetor Ordenado:\n")
-        for i in range(0, n):
+    <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
+        vetor=[]<br>
+        for i in range(0, n):<br>
+            vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+        print("Vetor não ordenado\n")<br>
+        for i in range(0, n):<br>
+            print(f"[{vetor[i]}]",end=' ')<br>
+        for i in range(1,n):<br>
+            temp=vetor[i]<br>
+            l=0<br>
+            r=i<br>
+            while l < r: <br>
+                pos= int((l+r)/2) <br>
+                if(vetor[pos]<=temp):<br>
+                    l=pos+1<br>
+                else:<br>
+                    r=pos<br>
+            for j in range(i,r,-1):<br>
+                vetor[j]=vetor[j-1]<br>
+            vetor[r]=temp<br>
+        print("\nVetor Ordenado:\n")<br>
+        for i in range(0, n):<br>
             print(f"[{vetor[i]}]",end=' ')</p>
 
     <h3 color:"#7B00AB">Inserção Direta</h3>
         <p>Após a criação do vetor, temos um for que vai da posição 1 até o tamanho do vetor, declarando x igual ao valor da posição do vetor e j igual a posição do vetor e ainda dentro do for, temos um while que vai comparar x com os valores do vetor anterior e deslocar para esquerda e vai continuar até que x seja encontrado. Quando o while terminar, x é colocado na posição correta.</p>
-   <p>n = int(input("Entre com a dimensão do vetor:  "))
-    vetor=[]
-    for i in range(0, n):
-      vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
-    print("Vetor não ordenado\n")
-    for i in range(0, n):
-      print(f"[{vetor[i]}]",end=' ')
-    for i in range(1,n):
-      x=vetor[i]
-      j=i
-      while j>0 and x < vetor[j-1]:
-        vetor[j]=vetor[j-1]
-        j=j-1
-      vetor[j]=x
-    print("\nVetor ordenado: \n")
-    for i in range(0, n):
+   <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
+    vetor=[]<br>
+    for i in range(0, n):<br>
+      vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+    print("Vetor não ordenado\n")<br>
+    for i in range(0, n):<br>
+      print(f"[{vetor[i]}]",end=' ')<br>
+    for i in range(1,n):<br>
+      x=vetor[i]<br>
+      j=i<br>
+      while j>0 and x < vetor[j-1]: <br>
+        vetor[j]=vetor[j-1]<br>
+        j=j-1<br>
+      vetor[j]=x<br>
+    print("\nVetor ordenado: \n")<br>
+    for i in range(0, n):<br>
       print(f"[{vetor[i]}]",end=' ')</p>
 
     <h3 color:"#7B00AB">Seleção direta</h3>
     <p>Após a criação do vetor, temos um for que vai de 1 até o tamanho do vetor, declarando x igual ao valor da posição do vetor e j igual a posição do vetor, ainda dentro do for vai temos um while que vai comparar x com os valores do vetor anterior e deslocar para esquerda e vai continuar até que x seja encontrado. Quando o while terminar, x é colocado na posição correta.</p>
-    <p>n = int(input("Entre com a dimensão do vetor:  "))
-   vetor=[]
-for i in range(0, n):
-  vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
-print("Vetor não ordenado\n")
-for i in range(0, n):
-  print(f"[{vetor[i]}]",end=' ')
-for i in range(0,n):
-  k=i
-  x=vetor[i]
-  for j in range(i+1,n):
-    if(vetor[i]>vetor[j]):
-      k=j
-      x=vetor[k]
-    vetor[k]=vetor[i]
-    vetor[i]=x
-print("\nVetor ordenado: \n")
-for i in range(0, n):
+    <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
+   vetor=[]<br>
+for i in range(0, n):<br>
+  vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+print("Vetor não ordenado\n")<br>
+for i in range(0, n):<br>
+  print(f"[{vetor[i]}]",end=' ')<br>
+for i in range(0,n):<br>
+  k=i<br>
+  x=vetor[i]<br>
+  for j in range(i+1,n):<br>
+    if(vetor[i]>vetor[j]):<br>
+      k=j<br>
+      x=vetor[k]<br>
+    vetor[k]=vetor[i]<br>
+    vetor[i]=x<br>
+print("\nVetor ordenado: \n")<br>
+for i in range(0, n):<br>
   print(f"[{vetor[i]}]",end=' ')</p>
 
     <h3 color:"#7B00AB">Bolha</h3>
