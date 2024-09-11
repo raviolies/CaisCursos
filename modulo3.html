@@ -195,205 +195,205 @@ for i in range(0, n):<br>
     <h3 color:"#7B00AB">Bolha</h3>
 <p>Após a criação do vetor, temos um for que vai verificar se o elemento atual é maior que o próximo, e caso seja, ele trocará de posição(o maior ficará para frente).
     Depois, diminuirá o alcance pois uma parte já estaria ordenada, então esse processo de ordenação de pares vai se repetir por todo o vetor.</p>
-    <p>n = int(input("Entre com um numero = "))
-        vet=[]
-        for i in range(0, n):
-          vet.append(int(input(f"Entre com a posiçao{i} = ")))
-        for i in range(0,n):
-          print(vet[i], end=' ')
-        ind2=n
-        troquei=1
-        while(troquei==1):
-          troquei=0
-          for i in range(0,ind2-1):
-            if(vet[i]>vet[i+1]):
-              aux = vet[i]
-              vet[i] = vet[i+1]
-              vet[i+1] = aux 
-              troquei=1
-          ind2 = ind2 - 1     
-        print(f"\nVetor ordenado por bolha:")
-          for i in range(0,n):
+    <p>n = int(input("Entre com um numero = "))<br>
+        vet=[]<br>
+        for i in range(0, n):<br>
+          vet.append(int(input(f"Entre com a posiçao{i} = ")))<br>
+        for i in range(0,n):<br>
+          print(vet[i], end=' ')<br>
+        ind2=n<br>
+        troquei=1<br>
+        while(troquei==1):<br>
+          troquei=0<br>
+          for i in range(0,ind2-1):<br>
+            if(vet[i]>vet[i+1]):<br>
+              aux = vet[i]<br>
+              vet[i] = vet[i+1]<br>
+              vet[i+1] = aux<br> 
+              troquei=1<br>
+          ind2 = ind2 - 1  <br>   
+        print(f"\nVetor ordenado por bolha:")<br>
+          for i in range(0,n):<br>
             print(vet[i],end=' ')</p>
 
     <h2>Buscas no vetor</h2>
     <h3 color:"#7B00AB">Simples</h3>
     <p>Após a criação do vetor, será pedido para o usuário inserir um número.
         Depois disso, temos um for para verificar se no vetor existe esse número inserido, caso exista, em um print uma variável vai falar quantas vezes ele apareceu no código e outra em quais posições ele apareceu no vetor.</p>
-        <p>n = int(input("Entre com a dimensão do vetor:  "))
-        vetor=[]
-        for i in range(0, n):
-          vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))
-        print("Vetor:\n")
-        for i in range(0, n):
-          print(f"[{vetor[i]}]",end=' ')
-        e = int(input("\nEntre com o número a ser buscado:  "))
-        ok=0
-        for i in range(0,n):
-          if(vetor[i]==e):
-            ok=ok+1
-            print(f"O número {e} foi encontrado na posição {i} do vetor")    
+        <p>n = int(input("Entre com a dimensão do vetor:  "))<br>
+        vetor=[]<br>
+        for i in range(0, n):<br>
+          vetor.append(int(input(f"Entre com a posição {i} do vetor:  ")))<br>
+        print("Vetor:\n")<br>
+        for i in range(0, n):<br>
+          print(f"[{vetor[i]}]",end=' ')<br>
+        e = int(input("\nEntre com o número a ser buscado:  "))<br>
+        ok=0<br>
+        for i in range(0,n):<br>
+          if(vetor[i]==e):<br>
+            ok=ok+1<br>
+            print(f"O número {e} foi encontrado na posição {i} do vetor")    <br>
         print(f"O número {e} foi encontrado {ok} vez(es):")</p>
 
     <h3 color:"#7B00AB">Binária</h3>
     <p>Após a criação do vetor, um while verifica se ele tem números repetidos e o impede de colocá-los. Após isso o vetor é ordenado por Permutação.
         Um while verifica se o numero procurado existe, e se o número é maior ou menor que a posição central do vetor,caso seja maior, ele irá "excluir" os numeros anteriores e irá focar apenas nos números posteriores e vice-versa. Esse processo se repete até o número ser achado.</p>
-    <p>n = int(input("Entre com um numero = "))
-        vet=[]
-        for i in range(n):
-          ok=0
-          valor = int(input(f"Entre com a posição {i} = "))
-          while(ok==0):
-            if valor in vet:
-              print("Não é permitido ter posições com valores iguais")
-              valor = int(input(f"Entre com a posição {i} = "))
-            else:
-              vet.append(valor)
-              ok=1
-        print("Vetor:\n")
-        for i in range(0,n):
-          print(f"[{vet[i]}]",end=' ')
-        for i in range(0,n):
-          for j in range(n-1,i,-1):
-            if vet[i] > vet[j]:
-              temp = vet[i]
-              vet[i] = vet[j]
-              vet[j] = temp      
-        print("\nVetor ordenado:\n")
-        for i in range(0,n):
-          print(f"[{vet[i]}]",end=' ')
-        ele = int(input("\nEntre com um numero = "))
-        l=0 
-        r=n-1
-        while(r>l):
-          pos=int((l+r)/2)
-          if(vet[pos]>ele):
-            r=pos-1
-          else:
-            l=pos+1
-          if vet[pos]==ele:
-            print(f"O elemento {ele} foi encontrado na posição {pos} do vetor")
-            r=l-1
-          elif r==l:
-            if vet[r]==ele:
-              print(f"O elemento {ele} foi encontrado na posição {r} do vetor")
-            else:
+    <p>n = int(input("Entre com um numero = "))<br>
+        vet=[]<br>
+        for i in range(n):<br>
+          ok=0<br>
+          valor = int(input(f"Entre com a posição {i} = "))<br>
+          while(ok==0):<br>
+            if valor in vet:<br>
+              print("Não é permitido ter posições com valores iguais")<br>
+              valor = int(input(f"Entre com a posição {i} = "))<br>
+            else:<br>
+              vet.append(valor)<br>
+              ok=1<br>
+        print("Vetor:\n")<br>
+        for i in range(0,n):<br>
+          print(f"[{vet[i]}]",end=' ')<br>
+        for i in range(0,n):<br>
+          for j in range(n-1,i,-1):<br>
+            if vet[i] > vet[j]:<br>
+              temp = vet[i]<br>
+              vet[i] = vet[j]<br>
+              vet[j] = temp      <br>
+        print("\nVetor ordenado:\n")<br>
+        for i in range(0,n):<br>
+          print(f"[{vet[i]}]",end=' ')<br>
+        ele = int(input("\nEntre com um numero = "))<br>
+        l=0 <br>
+        r=n-1<br>
+        while(r>l):<br>
+          pos=int((l+r)/2)<br>
+          if(vet[pos]>ele):<br>
+            r=pos-1<br>
+          else:<br>
+            l=pos+1<br>
+          if vet[pos]==ele:<br>
+            print(f"O elemento {ele} foi encontrado na posição {pos} do vetor")<br>
+            r=l-1<br>
+          elif r==l:<br>
+            if vet[r]==ele:<br>
+              print(f"O elemento {ele} foi encontrado na posição {r} do vetor")<br>
+            else:<br>
               print(f"O elemento {ele} não foi encontrado")</p>
 
 
     <h2>Buscas na matriz</h2>
     <h3 color:"#7B00AB">Linhas</h3>  
     <p>Após a criação da matriz, o usuário insere o número desejado, e um laço feito de dois for faz com que procure o número em toda a matriz.</p>
-    <p>import numpy as np
-        linhas = int(input("Digite o número de linhas: "))
-        colunas = int(input("Digite o número de colunas: "))
-        mat = np.zeros((linhas, colunas))
-        for i in range(linhas):
-          for j in range(colunas):
-            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
-            mat[i, j] = valor
-        for i in range(linhas):
-          print()
-          for j in range(colunas):
-            print(f"[{mat[i,j]}]",end=' ') 
-        for k in range (0,linhas):
-          for i in range (0,colunas):
-            for j in range(linhas-1,i,-1):
-              if (mat[k][i]>mat[k][j]):
-                aux = mat[k][i]
-                mat[k][i] = mat[k][j]
-                mat[k][j] = aux
-        print(f"\nMatriz com suas linhas ordenadas")
-        for i in range(linhas):
-          print()
-          for j in range(colunas):
+    <p>import numpy as np<br>
+        linhas = int(input("Digite o número de linhas: "))<br>
+        colunas = int(input("Digite o número de colunas: "))<br>
+        mat = np.zeros((linhas, colunas))<br>
+        for i in range(linhas):<br>
+          for j in range(colunas):<br>
+            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))<br>
+            mat[i, j] = valor<br>
+        for i in range(linhas):<br>
+          print()<br>
+          for j in range(colunas):<br>
+            print(f"[{mat[i,j]}]",end=' ')<br> 
+        for k in range (0,linhas):<br>
+          for i in range (0,colunas):<br>
+            for j in range(linhas-1,i,-1):<br>
+              if (mat[k][i]>mat[k][j]):<br>
+                aux = mat[k][i]<br>
+                mat[k][i] = mat[k][j]<br>
+                mat[k][j] = aux<br>
+        print(f"\nMatriz com suas linhas ordenadas")<br>
+        for i in range(linhas):<br>
+          print()<br>
+          for j in range(colunas):<br>
             print(f"[{mat[i,j]}]",end=' ')</p> 
 
 
     <h3 color:"#7B00AB">Colunas</h3>
-    <p> import numpy as np
-        linhas = int(input("Digite o número de linhas: "))
-        colunas = int(input("Digite o número de colunas: "))
-        mat = np.zeros((linhas, colunas))
-        for i in range(linhas):
-          for j in range(colunas):
-            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
-            mat[i, j] = valor
-        print("\nMatriz original:")
-        for i in range(linhas):
-          print()
-          for j in range(colunas):
-            print(f"[{mat[i,j]}]", end=' ')
-        for j in range(colunas):
-          for i in range(linhas - 1):
-            for k in range(i + 1, linhas):
-              if mat[i][j] > mat[k][j]:
-                aux = mat[i][j]
-                mat[i][j] = mat[k][j]
-                mat[k][j] = aux
-        print(f"\n\nMatriz com suas colunas ordenadas:")
-        for i in range(linhas):
-          print()
-          for j in range(colunas):
+    <p> import numpy as np<br>
+        linhas = int(input("Digite o número de linhas: "))<br>
+        colunas = int(input("Digite o número de colunas: "))<br>
+        mat = np.zeros((linhas, colunas))<br>
+        for i in range(linhas):<br>
+          for j in range(colunas):<br>
+            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))<br>
+            mat[i, j] = valor<br>
+        print("\nMatriz original:")<br>
+        for i in range(linhas):<br>
+          print()<br>
+          for j in range(colunas):<br>
+            print(f"[{mat[i,j]}]", end=' ')<br>
+        for j in range(colunas):<br>
+          for i in range(linhas - 1):<br>
+            for k in range(i + 1, linhas):<br>
+              if mat[i][j] > mat[k][j]:<br>
+                aux = mat[i][j]<br>
+                mat[i][j] = mat[k][j]<br>
+                mat[k][j] = aux<br>
+        print(f"\n\nMatriz com suas colunas ordenadas:")<br>
+        for i in range(linhas):<br>
+          print()<br>
+          for j in range(colunas):<br>
             print(f"[{mat[i,j]}]", end=' ')</p>    
             
     <h3 color:"#7B00AB">Inteira</h3>      
-   <p> import numpy as np
-    linhas = int(input("Digite o número de linhas: "))
-    colunas = int(input("Digite o número de colunas: "))
-    mat = np.zeros((linhas, colunas))
-    for i in range(linhas):
-      for j in range(colunas):
-        valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
-        mat[i, j] = valor
-    print("\nMatriz original:")
-    for i in range(linhas):
-      print()
-      for j in range(colunas):
-        print(f"[{mat[i,j]}]", end=' ')
-    vet=[]
-    for i in range(linhas):
-      for j in range(colunas):
-        vet.append(mat[i,j])
-    n=linhas*colunas
-    for i in range(0,n):
-      for j in range(n-1,i,-1):
-        if vet[i]>vet[j]:
-          aux=vet[i]
-          vet[i]=vet[j]
-          vet[j]=aux
-    k=0
-    for i in range(linhas):
-      for j in range(colunas):
-        mat[i,j]=vet[k]
-        k=k+1
-    print("\nMatriz ordenada:")
-    for i in range(linhas):
-      print()
-      for j in range(colunas):
+   <p> import numpy as np<br>
+    linhas = int(input("Digite o número de linhas: "))<br>
+    colunas = int(input("Digite o número de colunas: "))<br>
+    mat = np.zeros((linhas, colunas))<br>
+    for i in range(linhas):<br>
+      for j in range(colunas):<br>
+        valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))<br>
+        mat[i, j] = valor<br>
+    print("\nMatriz original:")<br>
+    for i in range(linhas):<br>
+      print()<br>
+      for j in range(colunas):<br>
+        print(f"[{mat[i,j]}]", end=' ')<br>
+    vet=[]<br>
+    for i in range(linhas):<br>
+      for j in range(colunas):<br>
+        vet.append(mat[i,j])<br>
+    n=linhas*colunas<br>
+    for i in range(0,n):<br>
+      for j in range(n-1,i,-1):<br>
+        if vet[i]>vet[j]:<br>
+          aux=vet[i]<br>
+          vet[i]=vet[j]<br>
+          vet[j]=aux<br>
+    k=0<br>
+    for i in range(linhas):<br>
+      for j in range(colunas):<br>
+        mat[i,j]=vet[k]<br>
+        k=k+1<br>
+    print("\nMatriz ordenada:")<br>
+    for i in range(linhas):<br>
+      print()<br>
+      for j in range(colunas):<br>
         print(f"[{mat[i,j]}]", end=' ')</p>
 
     <h3 color:"#7B00AB">Busca na matriz</h3>
-        <p>import numpy as np
-        linhas = int(input("Digite o número de linhas: "))
-        colunas = int(input("Digite o número de colunas: "))
-        mat = np.zeros((linhas, colunas))
-        for i in range(linhas):
-          for j in range(colunas):
-            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))
-            mat[i, j] = valor
-        print("\nMatriz:")
-        for i in range(linhas):
-          print()
-          for j in range(colunas):
-            print(f"[{mat[i,j]}]", end=' ')
-        e = int(input("\nEntre com o número a ser buscado:  "))
-        ok=0
-        for i in range(linhas):
-          for j in range(colunas):
-            if(mat[i,j]==e):
-              ok=ok+1
-              print(f"O número {e} foi encontrado na posição [{i},{j}] da matriz")    
+        <p>import numpy as np<br>
+        linhas = int(input("Digite o número de linhas: "))<br>
+        colunas = int(input("Digite o número de colunas: "))<br>
+        mat = np.zeros((linhas, colunas))<br>
+        for i in range(linhas):<br>
+          for j in range(colunas):<br>
+            valor = int(input(f"Digite o valor para a posição [{i}][{j}]: "))<br>
+            mat[i, j] = valor<br>
+        print("\nMatriz:")<br>
+        for i in range(linhas):<br>
+          print()<br>
+          for j in range(colunas):<br>
+            print(f"[{mat[i,j]}]", end=' ')<br>
+        e = int(input("\nEntre com o número a ser buscado:  "))<br>
+        ok=0<br>
+        for i in range(linhas):<br>
+          for j in range(colunas):<br>
+            if(mat[i,j]==e):<br>
+              ok=ok+1<br>
+              print(f"O número {e} foi encontrado na posição [{i},{j}] da matriz")<br>    
         print(f"O número {e} foi encontrado {ok} vez(es):")</p>
     </main>
 
