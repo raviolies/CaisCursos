@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+    .seila{
+        color:#2196f3;
+    }
+
+    .seila2{
+        text-align: center;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="indexgo.html">Home</a>
+      <a href="modulo1go.html">Go: Módulo 1</a> 
+      <a href="modulo2go.html">Go: Módulo 2</a>
+      <a href="modulo3go.html">Go: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+
+    <main id="conteudo">
+        <h2 class="seila">Vantagens</h2>
+    <p>Go é altamente eficiente em sistemas concorrentes, permitindo manipular múltiplas tarefas ao mesmo tempo com goroutines (mecanismo de concorrência leve). </p>
+<p>A linguagem é compilada, o que resulta em um desempenho rápido e robusto, além de ser multiplataforma. A simplicidade e a legibilidade da sintaxe tornam o código mais fácil de manter e de escalar. 
+Go também oferece uma excelente biblioteca padrão para rede e desenvolvimento web, o que facilita a criação de serviços de backend e APIs.</p>
+
+<h2 class="seila">Desvantagens</h2>
+<p>Golang possui uma biblioteca padrão relativamente limitada para tarefas específicas e uma gestão de erros que muitos programadores 
+    acham incômoda, pois não existe tratamento de exceções.</p><p>A linguagem também é considerada limitada em aspectos de programação 
+    orientada a objetos, não suportando herança, o que pode ser um desafio para quem está acostumado com linguagens orientadas a objetos tradicionais.</p>
+
+    <h2 class="seila">Aplicações</h2>
+        <p>Go é amplamente usado no desenvolvimento de microserviços, servidores web, processamento de dados e sistemas em nuvem.</p> 
+      <p>Grandes empresas, como Google, Docker e Uber, utilizam Golang em seus backends devido à sua eficiência e suporte à concorrência.</p> 
+
+    <br><h2 class="seila2"> Conceitos Básicos</h2> 
+
+<p>Estrutura do Programa: Um programa em Go é composto por pacotes (packages).
+ O pacote main é o ponto de entrada para a execução do programa.</p> 
+  <p> Exemplo básico de código:</p> 
+<p> package main</p> 
+<p> import "fmt"</p> 
+<p> func main() {</p> 
+<p> fmt.Println("Hello, World!") }</p> 
+
+<h2 class="seila2">Variáveis e Tipos</h2>
+<p>Go possui tipos básicos como int, float, string, e bool. As variáveis podem ser declaradas usando a palavra-chave var ou usando := para inferência de tipo.</p>
+
+var x int = 10
+y := 20.5  // y é do tipo float64
+
+Operadores:
+Go inclui operadores aritméticos (+, -, *, /), de comparação (==, !=, >, <) e lógicos (&&, ||, !).
+
+<p>Estruturas de Controle:</p>
+
+Condições: Usa if, else if, else para controle condicional.
+
+<p>if x > 10 {</p>
+<p>fmt.Println("Maior que 10")</p>
+<p>} else {</p>
+<p> fmt.Println("10 ou menor") }</p>
+
+<br><p>Laços: Go possui o laço for, que pode funcionar como while também.</p>
+
+<p>for i := 0; i < 10; i++ {</p>
+<p>fmt.Println(i) }</p>
+  </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+        var video = document.getElementById("video1"); 
+
+        function playPause() { 
+        if (video.paused) 
+        video.play(); 
+            else 
+         video.pause(); } 
+
+    </script>
+</body>
+</html>

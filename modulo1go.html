@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+    .seila{
+        color:#2196f3;
+    }
+
+    .seila2{
+        text-align: center;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="indexgo.html">Home</a>
+      <a href="modulo1go.html">Go: Módulo 1</a> 
+      <a href="modulo2go.html">Go: Módulo 2</a>
+      <a href="modulo3go.html">Go: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+
+    <main id="conteudo">
+        <h1 class="seila">Módulo 1 - Instalação e configuração</h1>
+        <video width="350" height="270" controls>
+          <source src="comobaixar.mp4" type="video/mp4"></video>
+
+        <h2 class="seila">Passo 1. Instalar o Go</h2>
+          <p>O primeiro passo é instalar o Go a partir da página oficial. Isso instala o compilador, a Biblioteca Padrão e muitas ferramentas para executar várias </p> 
+        <p>tarefas comuns durante o desenvolvimento do Go.</p>
+          
+        <p>No seu navegador, siga o link: go.dev/doc/install.</p>
+      <p>Baixe a versão para o seu sistema operacional. Uma vez baixado, execute o instalador, abra o prompt de comando e
+           execute go version para</p></p>confirmar se o Go foi instalado.</p>
+    
+      <br><h2 class="seila">Passo 2. Instalar o VS Code</h2>
+      <p>Em seguida, instale o Visual Studio Code, que fornece funcionalidade básica de edição de código.</p>
+    <p>Abra seu navegador e pesquise por "vscode". Abra o primeiro link e baixe a versão para o seu sistema operacional. Uma vez baixado, execute o instalador.</p>
+   
+    <br><h2 class="seila">Passo 3. Instalar e atualizar a extensão Go</h2>
+    <p>O Visual Studio Code e a extensão Go fornecem IntelliSense, navegação de código e 
+     depuração avançada.</p>
+
+    </p>No Visual Studio Code, abra o modo de exibição Extensões clicando no ícone Extensões na Barra de Atividades. Ou use o atalho de teclado (Ctrl+Shift+X).
+     Procure a extensão Go e selecione instalar.</p>
+
+    <p>Abra a aba Ajuda>da Paleta de Comandos Mostrar Todos os Comandos, ou use o atalho de teclado (Ctrl+Shift+P)</p>
+  <p>Procure por Go: Install/Update tools execute o comando a partir do palete. Quando solicitado, selecione todas as ferramentas Go disponíveis e selecione OK, e aguarde até que as ferramentas Go terminem de atualizar.</p>
+  </main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+        var video = document.getElementById("video1"); 
+
+        function playPause() { 
+        if (video.paused) 
+        video.play(); 
+            else 
+         video.pause(); } 
+
+    </script>
+</body>
+</html>

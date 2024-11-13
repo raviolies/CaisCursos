@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+    .seila{
+        color:#2196f3;
+    }
+
+    .seila2{
+        text-align: center;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="indexgo.html">Home</a>
+      <a href="modulo1go.html">Go: Módulo 1</a> 
+      <a href="modulo2go.html">Go: Módulo 2</a>
+      <a href="modulo3go.html">Go: Módulo 3</a>
+      <a href="sobre">Sobre nós</a>
+    </nav>
+
+    <main id="conteudo">
+        <h1 class="seila">Módulo 2 - Programas básicos</h1>
+        <video width="360" height="280" controls>
+          <source src="go111.mp4" type="video/mp4"></video>
+
+        <video width="360" height="280" controls>
+  <source src="go2.mp4" type="video/mp4"></video>
+        
+        <h2 class="seila">BUSCA BINÁRIA</h2>
+    <p>package main</p>
+
+    <p>import "fmt"</p>
+
+   <p>func buscaBinaria(arr []int, x int) int {</p>
+   <p> esq, dir := 0, len(arr)-1</p>
+  <p>for esq <= dir {</p>
+  <p>meio := esq + (dir-esq)/2</p>
+  <p> if arr[meio] == x {</p>
+  <p>  return meio}</p>
+    <p>if arr[meio] < x {</p>
+    <p>  esq = meio + 1}</p>
+    <p>else{</p>
+    <p>dir = meio - 1}}</p>
+  <p>return -1}</p>
+
+<p>func main() {</p>
+<p>arr := []int{1, 3, 5, 7, 9, 11}</p>
+<p>x := 7</p>
+<p>fmt.Println("Posição:", buscaBinaria(arr, x))}</p>
+
+<br><h2 class="seila">BUSCA LINEAR</h2>
+<p>package main</p>
+<p>import "fmt"</p>
+
+<p>func buscaLinear(arr []int, x int) int {</p>
+<p>for i, v := range arr {</p>
+<p>if v == x {</p>
+<p> return i}}</p>
+<p>return -1}</p>
+
+<p>func main() {</p>
+<p>arr := []int{4, 2, 3, 1, 5}</p>
+<p> x := 3</p>
+<p>fmt.Println("Posição:", buscaLinear(arr, x))}</p>
+
+<h2 class="seila2">ORDENAÇÕES</h2>
+
+<h2 class="seila">ORDENAÇÃO BOLHA</h2>
+<p>package main</p>
+<p>import "fmt"</p>
+<p>func ordenacaoBolha(arr []int) {</p>
+<p>n := len(arr)</p>
+<p>for i := 0; i < n-1; i++ {</p>
+<p> for j := 0; j < n-i-1; j++ {</p>
+<p> if arr[j] > arr[j+1] {</p>
+<p>arr[j], arr[j+1] = arr[j+1], arr[j] }</p>
+<p> } } }</p>
+
+<p>func main() {</p>
+<p> arr := []int{5, 1, 4, 2, 8}</p>
+<p>ordenacaoBolha(arr)</p>
+<p> fmt.Println("Ordenado:", arr)}</p>
+
+<br><h2 class="seila">SELEÇÃO DIRETA</h2>
+<p>package main</p>
+</p>import "fmt"</p>
+
+<p>func ordenacaoSelecao(arr []int) {</p>
+<p> n := len(arr)</p>
+<p>for i := 0; i < n-1; i++ {</p>
+<p>min := i</p>
+<p>for j := i + 1; j < n; j++ {</p>
+<p>if arr[j] < arr[min] {</p>
+<p> min = j }}</p>
+<p>arr[i], arr[min] = arr[min], arr[i] } }</p>
+
+<p>func main() {</p>
+<p>arr := []int{29, 10, 14, 37, 13}</p>
+<p>ordenacaoSelecao(arr)</p>
+<p>fmt.Println("Ordenado:", arr)}</p>
+
+<br><h2 class="seila">INSERÇÃO DIRETA</h2>
+<p>package main</p>
+<p>import "fmt"</p>
+<p>func ordenacaoInsercao(arr []int) {</p>
+<p>n := len(arr)</p>
+<p> for i := 1; i < n; i++ {</p>
+<p>chave := arr[i]</p>
+<p>j := i - 1</p>
+<p>for j >= 0 && arr[j] > chave {</p>
+<p>arr[j+1] = arr[j]</p>
+<p>j--}</p>
+<p>arr[j+1] = chave} }</p>
+
+<p>func main() {</p>
+<p>arr := []int{12, 11, 13, 5, 6}</p>
+<p>ordenacaoInsercao(arr)</p>
+<p>fmt.Println("Ordenado:", arr)}</p>
+
+<br><h2 class="seila">INSERÇÃO BINÁRIA</h2>
+<p>package main</p>
+<p>import "fmt"</p>
+<p>func insercaoBinaria(arr []int) {</p>
+<p>n := len(arr)</p>
+<p>for i := 1; i < n; i++ {</p>
+<p>x := arr[i]</p>
+<p>esq, dir := 0, i</p>
+<p>for esq < dir {</p>
+<p> meio := (esq + dir) / 2</p>
+<p>if arr[meio] <= x {</p>
+<p>esq = meio + 1 } </p>
+<p>else { dir = meio } }</p>
+<p>for j := i; j > esq; j-- {</p>
+<p>arr[j] = arr[j-1] }</p>
+<p>arr[esq] = x } }</p>
+
+<p>func main() {</p>
+<p>arr := []int{37, 23, 0, 17, 12, 72, 31}</p>
+<p>insercaoBinaria(arr)</p>
+<p>fmt.Println("Ordenado:", arr)}</p>
+
+<br><h2 class="seila">ORDENAÇÃO POR PERMUTAÇÃO</h2>
+<p>package main</p>
+<p>import "fmt"</p>
+<p>func permutacao(arr []int, inicio int) {</p>
+<p>if inicio == len(arr)-1 {</p>
+<p>fmt.Println(arr)} </p>
+<p>else { for i := inicio; i < len(arr); i++ {</p>
+<p>arr[inicio], arr[i] = arr[i], arr[inicio]</p>
+<p> permutacao(arr, inicio+1)</p>
+<p>arr[inicio], arr[i] = arr[i], arr[inicio] } } }</p>
+
+<p>func main() {</p>
+<p>arr := []int{1, 2, 3}</p>
+<p> permutacao(arr, 0)}</p>
+
+</main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+        var video = document.getElementById("video1"); 
+
+        function playPause() { 
+        if (video.paused) 
+        video.play(); 
+            else 
+         video.pause(); } 
+
+    </script>
+</body>
+</html>

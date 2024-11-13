@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>CAIS Cursos - Pyhton</title>
+  <link rel="icon" type="image/x-icon" href="/CAIS_PHYTON/phytonlogoc.png">
+
+  <style>
+    header{
+      display:flex;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    header{
+      background-color: #2196f3;
+      padding: 10px;
+    }
+
+    .btn-abrir{
+      color: white;
+      font-size: 35px;
+      margin-right:10px;
+      margin-bottom:10px;
+    }
+
+    nav{
+      height: 100%;
+      width: 0px;
+      background-color: #2196f3;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      transition: width 0.3s;
+    }
+
+    nav a{
+      color: white;
+      font-size: 20px;
+      display: block;
+      padding: 20px 13px 33px;
+    }
+
+    nav a:hover{
+      color: black;
+      background-color: white;
+    }
+
+    main{
+      padding: 12px;
+      transition: margin-left 0.3s;
+    }
+
+    .icon {
+       width: 250px;
+       margin-bottom: 10px;
+       display: block;
+       margin: auto;
+       justify-content:center;
+       align-items:center;
+       margin-left:210%;
+      }
+
+    .seila{
+        color:#2196f3;
+    }
+
+    .seila2{
+        text-align: center;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+    <header>
+    <a href="#" class="btn-abrir" onclick="abrirMenu()">&#9776;</a>
+    <div><img src="logobranca.png" class="icon"></img></div>
+    </header>
+    <nav id="menu">
+      <a href="#" onclick="fechar()">&times;</a>
+      <a href="indexgo.html">Home</a>
+      <a href="modulo1go.html">Go: Módulo 1</a> 
+      <a href="modulo2go.html">Go: Módulo 2</a>
+      <a href="modulo3go.html">Go: Módulo 3</a>
+      <a href="sobre.html">Sobre nós</a>
+    </nav>
+
+    <main id="conteudo">
+        <h1 class="seila">Módulo 3 - Programas avançados</h1>
+        
+<video width="320" height="240" controls>
+  <source src="go2.mp4" type="video/mp4"></video>
+        
+        <h2 class="seila">FATORIAL</h2>
+          <p>package main</p>
+
+        <p>import ( "fmt")
+          
+        <p>func fatorial(n int) int {</p>
+        <p>if n == 0 {
+              return 1 }
+           return n * fatorial(n-1) }<p>
+          
+           <p> func main() {</p>
+           <p>var num int</p>
+          <p>fmt.Print("Digite um número: ")</p>
+          <p>fmt.Scan(&num)
+          </p> fmt.Printf("Fatorial de %d é %d\n", num, fatorial(num))}</p>
+          
+          <br><h2 class="seila">PRIMO</h2>
+          <p> package main</p>
+
+        <p>import ("fmt")</p>
+          
+    <p>func ehPrimo(n int) bool {</p>
+    <p>if n <= 1 {</p>
+    <p>return false }</p>
+    <p>for i := 2; i*i <= n; i++ {</p>
+    <p> if n%i == 0 {</p>
+    <p> return false } }</p>
+    <p>return true }</p>
+          
+<br><p> func main() {</p>
+<p>var num int</p>
+<p> fmt.Print("Digite um número: ")</p>
+<p>fmt.Scan(&num)</p>
+<p> if ehPrimo(num) {</p>
+<p>fmt.Printf("%d é primo.\n", num)</p>
+<p>} else {</p>
+<p> fmt.Printf("%d não é primo.\n", num) } }</p>
+
+<br><h2 class="seila">EULER</h2>
+<p> package main</p>
+<p>import ("fmt")</p>
+<p>func calcularEuler(termos int) float64 {</p>
+<p>e := 1.0</p>
+<p>fatorial := 1.0</p>
+<p>for i := 1; i <= termos; i++ {</p>
+<p>fatorial *= float64(i)</p>
+<p>e += 1 / fatorial }</p>
+<p>return e }</p>
+
+
+<br><h2 class="seila2">VETOR</h2>
+    <p>package main</p>
+    <p>import ("fmt")</p>
+
+<p>func main() {</p>
+<p>vetor := []int{1, 2, 3, 4, 5}</p>
+<p>fmt.Println("Vetor:", vetor)</p>
+
+<p>// Adicionando um elemento</p>
+<p>vetor = append(vetor, 6)</p>
+<p>fmt.Println("Vetor após adicionar 6:", vetor)</p>
+
+<p>// Removendo o primeiro elemento</p>
+<p>vetor = vetor[1:]</p>
+<p>fmt.Println("Vetor após remover o primeiro elemento:", vetor)}</p>
+
+<br><h2 class="seila">MATRIZ</h2>
+<p>package main</p>
+
+<p>import ("fmt")</p>
+    
+<p>func main() {</p>
+<p> matriz := [][]int{</p>
+<p> {1, 2, 3},</p>
+<p>{4, 5, 6},</p>
+<p>  {7, 8, 9},} </p>
+    
+<p>fmt.Println("Matriz:")</p>
+<p> for _, linha := range matriz {</p>
+<p>fmt.Println(linha) } }</p>
+
+<br><h2 class="seila2">ARQUIVOS</h2> 
+<h2 class="seila">CRIAR ARQUIVO</h2> 
+<p>package main</p>
+<p>import ("fmt"</p>
+<p>"os")</p>
+
+<p>func main() {</p>
+<p>arquivo, err := os.Create("exemplo.txt")</p>
+<p>if err != nil {</p>
+<p>fmt.Println(err)</p>
+<p>return}</p>
+<p>defer arquivo.Close()</p>
+
+<p>arquivo.WriteString("Este é um arquivo de exemplo.\n")</p>
+<p>fmt.Println("Arquivo criado com sucesso.") }</p>
+
+<br><h2 class="seila">LER ARQUIVO</h2> 
+<p>package main</p>
+<p>import (</p>
+<p>"fmt"</p>
+<p>"io/ioutil"</p>
+<p>"log")</p>
+
+<p>func main() { </p>
+<p>conteudo, err := ioutil.ReadFile("exemplo.txt")</p>
+<p>if err != nil {</p>
+<p>log.Fatal(err) }</p>
+<p>fmt.Println("Conteúdo do arquivo:")</p>
+<p>fmt.Println(string(conteudo)) }</p>
+
+
+<br><h2 class="seila">EDITAR ARQUIVO</h2>
+    <p>package main</p>
+
+</p>import (</p>
+</p>"fmt"</p>
+</p>"os")</p>
+
+</p>func main() {</p>
+</p>arquivo, err := os.OpenFile("exemplo.txt", os.O_APPEND|os.O_WRONLY, 0644)</p>
+</p>if err != nil {</p>
+</p>fmt.Println(err)</p>
+</p>return }</p>
+</p>defer arquivo.Close()</p>
+
+</p>_, err = arquivo.WriteString("Adicionando uma nova linha.\n")</p>
+</p>if err != nil {</p>
+</p>fmt.Println(err)</p>
+</p>return }</p>
+</p>fmt.Println("Arquivo editado com sucesso.") }</p>
+
+<br><h2 class="seila">APAGAR ARQUIVO</h2>
+ <p>package main</p>
+
+<p>import (</p>
+<p>"fmt"</p>
+<p>"os")</p>
+
+<p>func main() {</p>
+<p>err := os.Remove("exemplo.txt")</p>
+<p>if err != nil {</p>
+<p>fmt.Println(err)</p>
+<p>return }</p>
+<p>fmt.Println("Arquivo apagado com sucesso.") }</p>
+
+</main>
+
+    <script>
+      function abrirMenu() {
+        document.getElementById('menu').style.width = '205px';
+        document.getElementById('conteudo').style.marginLeft='220px';
+      }
+
+      function fechar(){
+        document.getElementById('menu').style.width = '0px';
+        document.getElementById('conteudo').style.marginLeft = '0px';
+      } 
+        var video = document.getElementById("video1"); 
+
+        function playPause() { 
+        if (video.paused) 
+        video.play(); 
+            else 
+         video.pause(); } 
+
+    </script>
+</body>
+</html>
